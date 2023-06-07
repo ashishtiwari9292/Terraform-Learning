@@ -4,9 +4,10 @@ provider "aws" {
   secret_key = "YyNsroqW6i3FF602SR3ER4BhyK7Yf0I3JF/58TgX"
 }
 
+
 resource "aws_instance" "lab" {
-  ami           = "ami-026ebd4cfe2c043b2"
-  instance_type = "t3.micro"
+  ami           = var.image
+  instance_type = var.instance_type
 
   tags = {
     Name = "HelloWorld"
